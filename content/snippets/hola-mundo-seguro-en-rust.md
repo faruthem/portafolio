@@ -7,9 +7,7 @@ tags:
 ---
 Rust es famoso por su seguridad y velocidad. Aquí el clásico ejemplo:
 
-
-
-\`\``rust
+\`\``Rust
 
 fn main() {
 
