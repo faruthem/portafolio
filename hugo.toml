@@ -35,3 +35,8 @@ title = 'Kevin López Guzmán'
     name = 'Python'
     url = '/tags/python/'
     weight = 30
+
+  [[menus.main]]
+    name = 'Rust'
+    url = '/tags/rust/'
+    weight = 40  
