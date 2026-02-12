@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | Colección</title>
+    
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{{ .Site.BaseURL }}" class="brand">{{ .Site.Title }}</a>
+        
+        <div class="menu-items">
+            {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="btn btn-menu">{{ .Name }}</a>
+            {{ end }}
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="profile-card" style="text-align: left; padding: 30px;">
+            <h1 style="margin: 0;">📂 {{ .Title | humanize }}</h1>
+            <p style="margin-top: 10px;">
+                Colección de ejercicios y tutoriales sobre <strong>{{ .Title }}</strong>.
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <div class="grid-snippets">
+            {{ range .Pages }}
+            <article class="snippet-card">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <div style="font-size: 0.8rem; color: #666; margin-bottom: 10px;">
+                    {{ .Date.Format "02 Jan 2006" }}
+                </div>
+                <p>{{ .Summary }}</p>
+                <div class="tags">
+                    {{ range .Params.tags }}
+                    <span class="tag">#{{ . }}</span>
+                    {{ end }}
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </main>
+
+    <footer>
+        <p>© {{ now.Year }} Kevin López G. | <a href="{{ .Site.BaseURL }}">Home</a></p>
+    </footer>
+
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

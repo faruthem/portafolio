@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | Kevin.go</title>
+    
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    {{ hugo.Generator }}
+</head>
+<body>
+
+<nav class="navbar">
+    <span class="brand">{{ .Site.Title }}</span>
+    
+    <div class="menu-items">
+        {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}" class="btn btn-menu">{{ .Name }}</a>
+        {{ end }}
+        
+        <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    </div>
+</nav>
+
+    <main class="container post-container">
+        <article>
+            <header class="post-header">
+                <h1 class="post-title">{{ .Title }}</h1>
+                <div class="post-meta">
+                    <time>{{ .Date.Format "02 Jan 2006" }}</time>
+                    {{ range .Params.tags }}
+                        <span class="tag">#{{ . }}</span>
+                    {{ end }}
+                </div>
+            </header>
+            
+            <hr class="divider">
+
+            <div class="post-content">
+                {{ .Content }}
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© {{ now.Year }} Kevin López G. | <a href="{{ .Site.BaseURL }}">Home</a></p>
+    </footer>
+
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

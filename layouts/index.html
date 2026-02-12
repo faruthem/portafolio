@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/avatar.jpg">
+    <meta property="og:type" content="website">
+
+    <title>{{ .Site.Title }} | Hub</title>
+    
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    {{ hugo.Generator }}
+</head>
+<body>
+
+<nav class="navbar">
+    <span class="brand">{{ .Site.Title }}</span>
+    
+    <div class="menu-items">
+        {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}" class="btn btn-menu">{{ .Name }}</a>
+        {{ end }}
+        
+        <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    </div>
+</nav>
+
+    <main class="container">
+        <section class="profile-card">
+            <img src="images/avatar.jpg" alt="Foto de Kevin" class="avatar">
+            <h1>{{ .Site.Title }}</h1>
+            <p class="subtitle">{{ .Site.Params.description }}</p>
+            <p class="bio-text">{{ .Site.Params.bio }}</p>
+            
+            <div class="links">
+                <a href="{{ .Site.Params.github }}" class="btn btn-primary">GitHub</a>
+                <a href="#tutoriales" class="btn btn-secondary">Mis Snippets</a>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section id="tutoriales">
+            <h2>💻 Laboratorio de Código</h2>
+            <div class="grid-snippets">
+                {{ range first 3 (where .Site.RegularPages "Section" "snippets") }}
+                <article class="snippet-card">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Summary }}</p>
+                    <div class="tags">
+                        {{ range .Params.tags }}
+                        <span class="tag">#{{ . }}</span>
+                        {{ end }}
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© {{ now.Year }} Kevin López G. Hecho con <a href="https://gohugo.io">Hugo</a> & Go.</p>
+    </footer>
+
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

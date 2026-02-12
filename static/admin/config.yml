@@ -1,0 +1,23 @@
+# Cuando estemos en local, usamos esto para poder guardar archivos
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+# Aquí definimos tus colecciones
+collections:
+  - name: "snippets"
+    label: "Snippets de Código"
+    folder: "content/snippets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Resumen", name: "summary", widget: "text"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Cuerpo", name: "body", widget: "markdown"}

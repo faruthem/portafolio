@@ -1,0 +1,33 @@
+baseURL = 'https://github.com/faruthem/portafolio.git/'
+languageCode = 'es-mx'
+title = 'Kevin López Guzmán'
+
+# Habilitar resaltado de sintaxis nativo (Chroma, hecho en Go)
+[markup]
+  [markup.highlight]
+    # IMPORTANTE: Cambiar esto a true.
+    # Esto le dice a Hugo: "No pongas colores, solo pon clases CSS".
+    noClasses = true
+    guessSyntax = true
+
+[params]
+  description = "Ingeniero en Sistemas, Fisioterapeuta & Estudiante de Maestría"
+  bio = "Apasionado por la programación y Linux."
+  github = "https://github.com/tu-usuario"
+  instagram = "https://instagram.com/tu-usuario"
+
+[menus]
+  [[menus.main]]
+    name = 'Inicio'
+    url = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Go'
+    url = '/tags/go/'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Python'
+    url = '/tags/python/'
+    weight = 30
