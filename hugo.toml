@@ -1,20 +1,24 @@
-baseURL = 'https://github.com/faruthem/portafolio.git/'
+# --- CORRECCIÓN IMPORTANTE AQUÍ ---
+# Esta es la dirección real donde vivirá tu web
+baseURL = 'https://faruthem.github.io/portafolio/'
+# ----------------------------------
+
 languageCode = 'es-mx'
 title = 'Kevin López Guzmán'
 
 # Habilitar resaltado de sintaxis nativo (Chroma, hecho en Go)
 [markup]
   [markup.highlight]
-    # IMPORTANTE: Cambiar esto a true.
-    # Esto le dice a Hugo: "No pongas colores, solo pon clases CSS".
     noClasses = true
     guessSyntax = true
 
 [params]
   description = "Ingeniero en Sistemas, Fisioterapeuta & Estudiante de Maestría"
   bio = "Apasionado por la programación y Linux."
-  github = "https://github.com/tu-usuario"
-  instagram = "https://instagram.com/tu-usuario"
+  # Actualicé esto con tu usuario de GitHub que vi en el enlace
+  github = "https://github.com/faruthem"
+  # ¡OJO! Cambia esto por tu Instagram real si no es este
+  instagram = "https://instagram.com/faruthem"
 
 [menus]
   [[menus.main]]
