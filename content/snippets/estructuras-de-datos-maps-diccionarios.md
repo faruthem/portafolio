@@ -21,7 +21,7 @@ import (
 func main() {
 	// 1. Declaración e inicialización de un Map
 	// La llave es un string, el valor es un string
-	glosario := map\[string]string{
+	glosario := map[string]string{
 		"api":   "Interfaz de Programación de Aplicaciones que permite a dos sistemas comunicarse.",
 		"linux": "El núcleo de sistema operativo libre y de código abierto.",
 		"go":    "Lenguaje compilado, concurrente y de tipado estático creado por Google.",
@@ -55,7 +55,7 @@ func main() {
 
 		// 3. El modismo "Comma OK" (El superpoder de Go)
 		// Go devuelve dos valores al buscar en un map: el valor, y un booleano si existe.
-		definicion, existe := glosario\[termino]
+		definicion, existe := glosario[termino]
 
 		if existe {
 			fmt.Printf("✅ %s: %s\n", strings.ToUpper(termino), definicion)
@@ -64,3 +64,4 @@ func main() {
 		}
 	}
 }
+```
