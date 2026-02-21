@@ -42,6 +42,6 @@ title = 'Kevin López Guzmán'
     weight = 40  
 
     [[menus.main]]
-    name = 'about'
-    url = '/tags/about/'
+    name = 'sobre mi'
+    url = '/about/'
     weight = 50
