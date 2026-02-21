@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600&display=swap');
+
 /* =========================================
    1. VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
@@ -201,6 +203,10 @@ footer {
     color: var(--primary);
     text-decoration: none;
 }
+
+/* Mejoras de tipografía para el código */
+body { font-family: 'Inter', sans-serif; }
+pre code, code { font-family: 'Fira Code', monospace; font-size: 0.9em; }
 
 
 /* =========================================
