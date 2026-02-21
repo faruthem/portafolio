@@ -15,3 +15,29 @@ toggleButton.addEventListener('click', () => {
     localStorage.setItem('theme', newTheme);
     toggleButton.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });
+
+/* --- Lógica del Botón de Copiar --- */
+document.querySelectorAll('.highlight pre').forEach((codeBlock) => {
+    const container = codeBlock.parentNode;
+    container.style.position = 'relative'; 
+
+    const copyButton = document.createElement('button');
+    copyButton.innerText = 'Copiar';
+    copyButton.style.cssText = 'position:absolute; right:10px; top:10px; padding:4px 8px; font-size:12px; background:#89b4fa; color:#11111b; border:none; border-radius:4px; cursor:pointer; font-weight:bold; opacity:0.8; transition:opacity 0.2s;';
+
+    copyButton.onmouseover = () => copyButton.style.opacity = '1';
+    copyButton.onmouseout = () => copyButton.style.opacity = '0.8';
+
+    container.appendChild(copyButton);
+
+    copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+            copyButton.innerText = '¡Copiado!';
+            copyButton.style.background = '#a6e3a1';
+            setTimeout(() => {
+                copyButton.innerText = 'Copiar';
+                copyButton.style.background = '#89b4fa';
+            }, 2000);
+        });
+    });
+});
