@@ -9,10 +9,9 @@ tags:
 Rust es famoso por su seguridad y velocidad. Aquí el clásico ejemplo:
 
 ```rust
-
 fn main() {
 
-\    println!("¡Hola Instagram desde Rust!");
+    println!("¡Hola Instagram desde Rust!");
 
 }
 ```
