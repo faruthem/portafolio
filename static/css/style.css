@@ -208,6 +208,39 @@ footer {
 body { font-family: 'Inter', sans-serif; }
 pre code, code { font-family: 'Fira Code', monospace; font-size: 0.9em; }
 
+/* --- Ajustes para Móviles (Responsive) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column !important; /* Pone el menú debajo del nombre */
+        align-items: center;
+        gap: 15px;
+        padding-top: 15px;
+    }
+    
+    .brand {
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .menu-items {
+        display: flex;
+        width: 100%;
+        overflow-x: auto; /* Permite hacer scroll horizontal con el dedo */
+        justify-content: flex-start;
+        padding-bottom: 10px; 
+        -webkit-overflow-scrolling: touch; /* Scroll suave en celulares */
+    }
+
+    /* Diseño de una mini barra de scroll para que el usuario sepa que puede deslizar */
+    .menu-items::-webkit-scrollbar {
+        height: 3px;
+    }
+    .menu-items::-webkit-scrollbar-thumb {
+        background-color: #89b4fa;
+        border-radius: 5px;
+    }
+}
+
 
 /* =========================================
    6. TEMA VS CODE DARK+ (COLORES DE CÓDIGO)
