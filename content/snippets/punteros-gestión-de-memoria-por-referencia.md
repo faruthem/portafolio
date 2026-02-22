@@ -1,47 +1,53 @@
 ---
-title: "Punteros: Gestión de Memoria por Referencia"
-date: 2026-02-21T14:25:00.000-06:00
-summary: Demostración de cómo modificar variables en su dirección de memoria
-  original usando punteros (* y &).
+title: "Structs: Tipos de Datos Complejos"
+date: 2026-02-22T17:27:00.000-06:00
+summary: Definición e instanciación de Structs para agrupar datos relacionados
+  bajo una misma entidad.
 tags:
   - Go
-  - ejercicios
-  - Memoria
+  - Ejercicios
+  - Estructuras
 ---
 ```go
 package main
 
 import "fmt"
 
-// 1. Paso por Valor: Recibe una copia aislada
-func modificarPorValor(numero int) {
-	numero = numero * 2
-	fmt.Printf("Dentro de modificarPorValor: %d\n", numero)
-}
-
-// 2. Paso por Referencia: Recibe un PUNTERO (\*int)
-func modificarPorReferencia(numero *int) {
-	// Usamos \* para acceder al valor que vive en esa dirección de memoria y modificarlo
-	*numero = *numero * 2
-	fmt.Printf("Dentro de modificarPorReferencia: %d\n", *numero)
+// 1. Definición del Struct "Atleta"
+// Piensa en esto como el "molde" o la plantilla arquitectónica
+type Atleta struct {
+	Nombre        string
+	Deporte       string
+	Edad          int
+	AlturaMetros  float64
+	EnTratamiento bool
 }
 
 func main() {
-	cargaBase := 50
+	// 2. Instanciación: Crear una entidad usando nuestro molde directamente
+	jugador1 := Atleta{
+		Nombre:        "Michael",
+		Deporte:       "Basketball",
+		Edad:          25,
+		AlturaMetros:  1.98,
+		EnTratamiento: false,
+	}
 
-	fmt.Println("--- ESTADO INICIAL ---")
-	fmt.Printf("Valor original: %d\n", cargaBase)
-	
-	// El operador & nos dice en qué parte de la RAM vive la variable
-	fmt.Printf("Dirección en memoria: %p\n\n", &cargaBase)
+	// 3. Crear una instancia vacía y llenarla después usando la notación de punto (.)
+	var paciente1 Atleta
+	paciente1.Nombre = "David"
+	paciente1.Deporte = "Atletismo"
+	paciente1.Edad = 30
+	paciente1.AlturaMetros = 1.75
+	paciente1.EnTratamiento = true
 
-	fmt.Println("--- INTENTO 1: PASO POR VALOR ---")
-	modificarPorValor(cargaBase)
-	fmt.Printf("Resultado en el main: %d (El original NO cambió)\n\n", cargaBase)
+	// 4. Mostrar la información accediendo a los campos
+	fmt.Println("🏀 Perfil de Rendimiento:")
+	fmt.Printf("Nombre: %s\n", jugador1.Nombre)
+	fmt.Printf("Deporte: %s (Altura: %.2fm)\n", jugador1.Deporte, jugador1.AlturaMetros)
+	fmt.Printf("Status Médico (En tratamiento): %t\n", jugador1.EnTratamiento)
 
-	fmt.Println("--- INTENTO 2: PASO POR REFERENCIA ---")
-	// Usamos & para enviar la dirección de memoria, no el número 50
-	modificarPorReferencia(&cargaBase)
-	fmt.Printf("Resultado en el main: %d (¡El original SÍ cambió!)\n", cargaBase)
+	fmt.Println("\n🏥 Perfil Clínico:")
+	fmt.Printf("Paciente: %s\n", paciente1.Nombre)
+	fmt.Printf("Status Médico (En tratamiento): %t\n", paciente1.EnTratamiento)
 }
-```
