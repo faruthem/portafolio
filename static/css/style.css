@@ -242,6 +242,70 @@ pre code, code { font-family: 'Fira Code', monospace; font-size: 0.9em; }
 }
 
 
+/* --- Estilos del Buscador --- */
+.search-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#search-input {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #a6adc8; /* Gris azulado */
+    background: #181825;       /* Fondo oscuro */
+    color: #cdd6f4;            /* Texto claro */
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+#search-input:focus {
+    width: 200px;
+    border-color: #89b4fa;     /* Acento azul */
+}
+
+/* La caja flotante de resultados */
+#search-results {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #1e1e2e;
+    border: 1px solid #89b4fa;
+    border-radius: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+}
+
+#search-results li a {
+    display: block;
+    padding: 10px 15px;
+    color: #cdd6f4;
+    text-decoration: none;
+    border-bottom: 1px solid #313244;
+    font-size: 0.9em;
+}
+
+#search-results li a:hover {
+    background: #89b4fa;
+    color: #11111b;
+}
+
+.no-results {
+    padding: 10px 15px;
+    color: #a6adc8;
+    font-size: 0.9em;
+    text-align: center;
+}
+
 /* =========================================
    6. TEMA VS CODE DARK+ (COLORES DE CÓDIGO)
    ========================================= */
