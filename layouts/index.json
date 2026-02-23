@@ -1,0 +1,12 @@
+[
+  {{- $pages := where .Site.RegularPages "Type" "in" (slice "post" "posts" "snippets") -}}
+  {{- range $index, $page := $pages -}}
+    {{- if gt $index 0 }},{{ end -}}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "permalink": {{ $page.Permalink | jsonify }},
+      "tags": [{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}],
+      "content": {{ $page.Plain | jsonify }}
+    }
+  {{- end -}}
+]
