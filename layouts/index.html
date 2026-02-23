@@ -23,7 +23,11 @@
         {{ range .Site.Menus.main }}
             <a href="{{ .URL }}" class="btn btn-menu">{{ .Name }}</a>
         {{ end }}
-        
+
+        <div class="search-container">
+           <input type="text" id="search-input" placeholder="Buscar...">
+           <ul id="search-results"></ul>
+        </div>
         <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
     </div>
 </nav>
