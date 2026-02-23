@@ -41,7 +41,10 @@ title = 'Kevin López Guzmán'
     url = '/tags/rust/'
     weight = 40  
 
-    [[menus.main]]
-    name = 'sobre mi'
-    url = '/about/'
-    weight = 50
+  [[menus.main]]
+   name = 'sobre mi'
+   url = '/about/'
+   weight = 50
+
+  [outputs]
+   home = ["HTML", "RSS", "JSON"]
