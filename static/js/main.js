@@ -1,6 +1,17 @@
 const toggleButton = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme');
 
+/* --- Buscador en Tiempo Real --- */
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    
+    // PARCHE DE SEGURIDAD: Si no hay barra de búsqueda en esta página, no hacemos nada.
+    if (!searchInput || !searchResults) return; 
+
+    let posts = [];
+    // ... (el resto del código fetch hacia abajo se queda igual)
+
 // Aplicar tema guardado al cargar
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
