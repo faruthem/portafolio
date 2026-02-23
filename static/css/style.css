@@ -209,38 +209,58 @@ body { font-family: 'Inter', sans-serif; }
 pre code, code { font-family: 'Fira Code', monospace; font-size: 0.9em; }
 
 /* --- Ajustes para Móviles (Responsive) --- */
+
+/* --- Ajustes Globales para Bloques de Código --- */
+pre {
+    max-width: 100%;
+    overflow-x: auto; /* Hace que el scroll sea solo dentro del cuadrito de código */
+    box-sizing: border-box;
+    border-radius: 8px; /* Bordes suaves */
+}
+
+/* --- Ajustes para Móviles (Responsive Optimizado) --- */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column !important; /* Pone el menú debajo del nombre */
+        flex-direction: column !important;
         align-items: center;
         gap: 15px;
         padding-top: 15px;
     }
     
-    .brand {
-        text-align: center;
-        line-height: 1.2;
-    }
-
     .menu-items {
         display: flex;
         width: 100%;
-        overflow-x: auto; /* Permite hacer scroll horizontal con el dedo */
-        justify-content: flex-start;
-        padding-bottom: 10px; 
-        -webkit-overflow-scrolling: touch; /* Scroll suave en celulares */
+        flex-wrap: wrap; /* En lugar de scroll horizontal, los botones bajan de renglón si no caben */
+        justify-content: center;
+        gap: 10px;
+        overflow: visible; /* Evita que los resultados del buscador se corten */
     }
 
-    /* Diseño de una mini barra de scroll para que el usuario sepa que puede deslizar */
-    .menu-items::-webkit-scrollbar {
-        height: 3px;
+    /* El buscador toma su propio renglón */
+    .search-container {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 5px;
     }
-    .menu-items::-webkit-scrollbar-thumb {
-        background-color: #89b4fa;
-        border-radius: 5px;
+
+    #search-input {
+        width: 90%; /* Hace la barra más grande y cómoda para el dedo */
+    }
+
+    #search-input:focus {
+        width: 95%;
+    }
+
+    /* Despliega los resultados sobre todo lo demás */
+    #search-results {
+        width: 90%;
+        left: 5%; /* Lo centra en la pantalla */
+        right: auto;
+        z-index: 999999; /* Lo obliga a estar al frente de todo */
+        box-shadow: 0 20px 25px rgba(0,0,0,0.8);
     }
 }
-
 
 /* --- Estilos del Buscador --- */
 .search-container {
