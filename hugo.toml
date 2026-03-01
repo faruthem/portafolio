@@ -48,8 +48,3 @@ title = 'Kevin López Guzmán'
 
   [outputs]
    home = ["HTML", "RSS", "JSON"]
-
-  [params]
-  description = "Portafolio de Kevin López Guzmán. Ingeniero en Sistemas, Fisioterapeuta y Desarrollador."
-  author = "Kevin López Guzmán"
-  # images = ["/ruta-a-tu-imagen.jpg"] # subir una imagen global y poner su ruta aquí
