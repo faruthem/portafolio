@@ -326,6 +326,48 @@ pre {
     text-align: center;
 }
 
+/* --- Tabla de Contenidos (ToC) --- */
+.toc-container {
+    background-color: #181825;
+    border-left: 4px solid #89b4fa;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+.toc-container details summary {
+    cursor: pointer;
+    color: #cdd6f4;
+    outline: none;
+}
+
+.toc-content {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.toc-content ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.toc-content a {
+    color: #a6adc8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.toc-content a:hover {
+    color: #89b4fa;
+}
+
+.reading-time {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #a6e3a1; /* Verde menta para destacar */
+}
+
 /* =========================================
    6. TEMA VS CODE DARK+ (COLORES DE CÓDIGO)
    ========================================= */
