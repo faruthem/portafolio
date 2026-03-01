@@ -28,6 +28,7 @@
                 <h1 class="post-title">{{ .Title }}</h1>
                 <div class="post-meta">
                     <time>{{ .Date.Format "02 Jan 2006" }}</time>
+                    <span class="reading-time">⏱️ {{ .ReadingTime }} min de lectura</span>
                     {{ range .Params.tags }}
                         <span class="tag">#{{ . }}</span>
                     {{ end }}
@@ -37,6 +38,16 @@
             <hr class="divider">
 
             <div class="post-content">
+                {{ if gt .WordCount 200 }}
+<div class="toc-container">
+    <details open>
+        <summary><strong>📑 Índice del Artículo</strong></summary>
+        <div class="toc-content">
+            {{ .TableOfContents }}
+        </div>
+    </details>
+</div>
+{{ end }}
                 {{ .Content }}
             </div>
         </article>
