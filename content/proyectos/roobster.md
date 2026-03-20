@@ -12,8 +12,7 @@ Aquí describiremos la logica del proyecto
 ### ¡Juega ahora!
 
 <div class="game-container" style="text-align: center; margin-top: 20px;">
-    <iframe frameborder="0" src="https://itch.io/embed-upload/16873312?color=333333" allowfullscreen="" width="640" height="380"><a href="https://farithem.itch.io/roobster-game">Play Roobster Game on itch.io</a></iframe>
-    <p style="font-size: 0.8em; color: #a6adc8;">Haz clic dentro del cuadro para jugar. Usa controles en pantalla o teclado.</p>
+    <iframe frameborder="0" src="https://itch.io/embed/4399678" width="552" height="167"><a href="https://farithem.itch.io/roobster-game">Roobster Game by Farithem</a></iframe>
 </div>
 
 ---
