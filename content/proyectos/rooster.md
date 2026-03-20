@@ -13,7 +13,7 @@ Aquí describiremos la logica del proyecto
 
 <div class="game-container" style="text-align: center; margin-top: 20px;">
     <iframe 
-        src="/portafolio/juegos/mi-juego/game.html" 
+        src="/portafolio/games/godot/roobster/v1/game.html" 
         width="100%" 
         height="600px" 
         style="border: 2px solid #89b4fa; border-radius: 8px; max-width: 800px; background-color: #000;" 
