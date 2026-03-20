@@ -7,10 +7,15 @@ languageCode = 'es-mx'
 title = 'Kevin López Guzmán'
 
 # Habilitar resaltado de sintaxis nativo (Chroma)
+#[markup]
+#  [markup.highlight]
+#    noClasses = true
+#    guessSyntax = true
+
 [markup]
-  [markup.highlight]
-    noClasses = true
-    guessSyntax = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   description = "Ingeniero en Sistemas, Fisioterapeuta & Estudiante de Maestría de administración de las tecnologías"
@@ -54,7 +59,4 @@ title = 'Kevin López Guzmán'
   [outputs]
    home = ["HTML", "RSS", "JSON"]
 
-   [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+   
